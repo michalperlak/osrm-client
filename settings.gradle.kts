@@ -1,2 +1,5 @@
-rootProject.name = "osrm-client"
+rootProject.name = "pickup-osrm"
+
+include("osrm-api")
+
 

@@ -1,14 +1,29 @@
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
 plugins {
-    kotlin("jvm") version "1.3.72"
+    base
+    kotlin("jvm") version "1.3.72" apply false
 }
 
-group = "up.pick"
-version = "1.0.0-SNAPSHOT"
+allprojects {
+    group = "up.pick"
+    version = "1.0.0-SNAPSHOT"
 
-repositories {
-    mavenCentral()
+    repositories {
+        jcenter()
+        mavenCentral()
+    }
 }
 
-dependencies {
-    implementation(kotlin("stdlib"))
+subprojects {
+    tasks.withType<KotlinCompile> {
+        kotlinOptions.jvmTarget = "1.8"
+    }
+
+    tasks.withType<Test> {
+        useJUnitPlatform()
+        testLogging {
+            events("passed", "skipped", "failed")
+        }
+    }
 }
