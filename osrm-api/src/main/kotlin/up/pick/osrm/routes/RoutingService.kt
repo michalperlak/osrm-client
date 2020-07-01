@@ -7,12 +7,12 @@ import up.pick.osrm.routes.params.Alternatives
 import up.pick.osrm.routes.params.Annotations
 import up.pick.osrm.routes.params.Overview
 
-class RoutingService {
+interface RoutingService {
     fun route(
         coordinates: List<Coordinate>,
         alternatives: Alternatives = Alternatives.none(),
         steps: Boolean = false,
         overview: Overview = Overview.SIMPLIFIED,
         annotations: Annotations = Annotations.NONE
-    ): Promise<Routing> = TODO()
+    ): Promise<Routing>
 }

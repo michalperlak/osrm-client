@@ -1,9 +1,7 @@
 package up.pick.osrm.common
 
-data class Ordered<T : Comparable<T>>(
-    private val elements: List<T>
-): Iterable<T> {
-    private val sorted by lazy { elements.sorted() }
-
-    override fun iterator(): Iterator<T> = sorted.iterator()
+class Ordered<T>(
+    private val elements: Array<T>
+) : Iterable<T> {
+    override fun iterator(): Iterator<T> = elements.iterator()
 }

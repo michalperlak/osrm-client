@@ -1,8 +1,8 @@
 package up.pick.osrm.routes.domain
 
-class Waypoint : Comparable<Waypoint> {
+import up.pick.osrm.domain.Coordinate
 
-    override fun compareTo(other: Waypoint): Int {
-        TODO("Not yet implemented")
-    }
-}
+data class Waypoint(
+    val location: Coordinate,
+    val name: String
+)
