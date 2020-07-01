@@ -1,7 +1,7 @@
 package up.pick.osrm.routes
 
-import up.pick.osrm.common.Coordinate
-import up.pick.osrm.common.Option
+import up.pick.osrm.common.Promise
+import up.pick.osrm.domain.Coordinate
 import up.pick.osrm.routes.domain.Routing
 import up.pick.osrm.routes.params.Alternatives
 import up.pick.osrm.routes.params.Annotations
@@ -14,5 +14,5 @@ class RoutingService {
         steps: Boolean = false,
         overview: Overview = Overview.SIMPLIFIED,
         annotations: Annotations = Annotations.NONE
-    ): Option<Routing> = TODO()
+    ): Promise<Routing> = TODO()
 }

@@ -1,4 +1,4 @@
-package up.pick.osrm.common
+package up.pick.osrm.domain
 
 data class Coordinate(
     val longitude: Longitude,
